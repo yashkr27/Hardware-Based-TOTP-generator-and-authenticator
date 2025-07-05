@@ -1,6 +1,6 @@
 ****STEP BY STEP GUIDE TO MAKE THE PROJECT**
 -> COMPONENTS**
-----------------> 1) ARDUINO LEONARDO(HAS KEYBOARD EMULATION)
+----------------> 1) ARDUINO LEONARDO(HAS KEYBOARD EMULATION) 
 ----------------> 2) RTC MODULE- HW111/DS3231(Real Time Clock Module)
 ----------------> 3) LCD RG1602A(16X2, no I2C)
 ----------------> 4) 220 ohm Resistors( take 20) or take 5 resistors and one 10kilo-ohm Potentiometer
@@ -12,7 +12,14 @@
 ----------------> 10) Electron API
 
 
-These were the hardware components required.. 
+
+
+
+
+REMEMBER TO SOLDER MALE BASE ON all LCD AND RTC pins
+
+
+
 
 **->CIRCUIT DIAGRAM**
 ![image](https://github.com/user-attachments/assets/5b0bc9f1-8c8e-405b-b8cf-2282ec4e4969)
