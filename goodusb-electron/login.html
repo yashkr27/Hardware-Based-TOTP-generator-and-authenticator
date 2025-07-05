@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Login - GoodUSB 2FA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background: #f7f7f7;
+    }
+    input, button {
+      font-size: 1rem;
+      padding: 10px;
+      margin: 10px;
+      width: 220px;
+    }
+    #status {
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Enter OTP to Log In</h2>
+  <input id="otpInput" placeholder="Enter OTP here" autofocus />
+  <br>
+  <button onclick="verifyOtp()">Login</button>
+  <div id="status"></div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+    let expectedOtp = '';
+
+    ipcRenderer.on('otp-latest', (_evt, otp) => {
+      expectedOtp = otp.trim();  // 🔧 Trim whitespace and newlines
+      console.log('✅ Received OTP from main process:', '"' + expectedOtp + '"');
+    });
+
+    function verifyOtp() {
+      const userInput = document.getElementById('otpInput').value.trim();  // 🔧 Trim input too
+      const status = document.getElementById('status');
+
+      console.log('🧾 User typed:', '"' + userInput + '"');
+      console.log('🔐 Expected OTP:', '"' + expectedOtp + '"');
+
+      if (userInput === expectedOtp) {
+        status.innerText = '✅ Success! OTP is correct.';
+        status.style.color = 'green';
+      } else {
+        status.innerText = '❌ Invalid OTP. Try again.';
+        status.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>

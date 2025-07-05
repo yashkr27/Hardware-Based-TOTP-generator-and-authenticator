@@ -1,0 +1,17 @@
+{
+  "name": "goodusb-electron",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@serialport/parser-readline": "^13.0.0",
+    "electron": "^36.4.0",
+    "serialport": "^13.0.0"
+  }
+}

@@ -1,0 +1,34 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>GoodUSB 2FA</title>
+  <style>
+    body   { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
+    button { margin: 6px; padding: 10px 22px; font-size: 1rem; cursor: pointer; }
+    #otp   { font-size: 2.4rem; color: green; margin-top: 22px; letter-spacing: 2px; }
+  </style>
+</head>
+<body>
+  <h2>Select 2FA Service</h2>
+  <button onclick="sendService('Google')">Google</button>
+  <button onclick="sendService('GitHub')">GitHub</button>
+
+  <h3>Current OTP:</h3>
+  <div id="otp">------</div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    function sendService(name) {
+      ipcRenderer.send('send-service', name);
+    }
+
+    // Update OTP display when main process forwards new code
+    ipcRenderer.on('otp-update', (_evt, otp) => {
+      document.getElementById('otp').innerText = otp;
+    });
+  </script>
+</body>
+</html>
