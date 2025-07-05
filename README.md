@@ -29,3 +29,4 @@ REMEMBER TO SOLDER MALE BASE ON all LCD AND RTC pins
 
 **-> AUTHENTICATOR WEBPAGE**
 -------------------------------> Go to Readme that says ELECTRON 
+-------------------------------> If anyone ever actually sees this and reads...if you get stuck or confused in building this...feel free to reach out to me on my socials, linkedin or insta, get my socials from my profile..adios
