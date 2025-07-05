@@ -1,0 +1,76 @@
+## 🖥️ Electron App Setup & Run
+
+This project includes an Electron-based desktop interface to interact with your hardware TOTP authenticator.
+
+### 📂 Location
+All Electron-related files are inside the `goodusb-electron` folder.
+
+```
+
+your-project-root/
+└── goodusb-electron/
+├── main.js
+├── preload.js         # optional
+├── renderer.js
+├── index.html
+├── package.json
+└── node\_modules/      # not tracked by Git
+
+````
+
+---
+
+### ⚙️ Prerequisites
+
+- **Node.js** (v16 or newer recommended)
+- **npm** (installed with Node.js)
+
+Verify with:
+```bash
+node -v
+npm -v
+````
+
+---
+
+### 🛠️ Installation Steps
+
+1. Navigate to the Electron directory:
+
+   ```bash
+   cd goodusb-electron
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+---
+
+### 🚀 Launch the App
+
+Start the development build:
+
+```bash
+npm start
+```
+
+This runs:
+
+```bash
+electron .
+```
+
+which opens your Electron app window and connects it to your hardware setup.
+
+---
+
+### 📝 Notes
+
+* The `node_modules/` folder and executable files like `electron.exe` are **ignored via `.gitignore`** and not committed to Git.
+* Always run `npm install` before launching, especially after cloning or fetching updates.
+* No global Electron install is needed—it's managed via `package.json`.
+*** ALWAYS MATCH COM PORT IN main.js
+---------------------------------------------------------------------------------------END-------------------------------------------------------------------------------------------------------------------------------
